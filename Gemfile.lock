@@ -1,9 +1,11 @@
 PATH
   remote: .
   specs:
-    sociable (0.0.2)
+    sociable (0.0.4)
       devise (~> 2.1.2)
+      faraday (~> 0.8)
       omniauth-facebook (~> 1.4.0)
+      omniauth-linkedin (~> 0.0.6)
       omniauth-twitter (~> 0.0.12)
 
 GEM
@@ -59,6 +61,8 @@ GEM
       rack
     omniauth-facebook (1.4.0)
       omniauth-oauth2 (~> 1.0.2)
+    omniauth-linkedin (0.0.6)
+      omniauth-oauth (~> 1.0.0)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)

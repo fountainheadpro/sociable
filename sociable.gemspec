@@ -32,5 +32,7 @@ Gem::Specification.new do |s|
   s.add_dependency("devise", "~> 2.1.2")
   s.add_dependency("omniauth-facebook", "~> 1.4.0")
   s.add_dependency("omniauth-twitter", "~> 0.0.12")
+  s.add_dependency("omniauth-linkedin", "~> 0.0.6")
+  s.add_dependency('faraday', '~> 0.8')
 
 end

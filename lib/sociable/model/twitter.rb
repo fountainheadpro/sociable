@@ -1,3 +1,4 @@
+require 'omniauth-twitter'
 module Sociable
   module Profile
     module Twitter
@@ -8,7 +9,7 @@ module Sociable
           # twitter fields
           field :twitter_handle,              :type => String
           field :twitter_profile_image_url,              :type => String
-          field :twitter_data, :type => String
+          field :twitter_data, :type => Hash
           attr_accessible :twitter_handle, :twitter_profile_image_url, :twitter_data, :current_sign_in_ip
 
         end
@@ -20,6 +21,9 @@ module Sociable
             users_criteria = self.any_of({ twitter_handle: data.nickname }, { last_sign_in_ip: ip, name: data.name })
             if users_criteria.count > 0
               user = users_criteria.first
+              user.credentials ||= {}
+              user.profile_image_url ||= data.image
+              user.credentials.merge!(twitter: access_token.credentials)
               user.update_attributes(twitter_handle: data.nickname,
                 twitter_data: access_token.extra.raw_info,
                 twitter_profile_image_url: data.image) unless (user.twitter_handle)
