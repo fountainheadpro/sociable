@@ -1,24 +1,25 @@
 $LOAD_PATH.unshift 'lib'
 require "version"
 
-Gem::Specification.new do |s|
-  s.name              = "sociable"
-  s.version           = Sociable::VERSION
-  s.date              = Time.now.strftime('%Y-%m-%d')
-  s.summary           = "This gem will make your rails app social in 30 seconds or less."
-  s.homepage          = "https://github.com/actions/sociable"
-  s.email             = "sergey@actions.im"
-  s.authors           = [ "Sergey Zelvenskiy" ]
-  s.has_rdoc          = false
+Gem::Specification.new do |gem|
+  gem.name              = "sociable"
+  gem.version           = Sociable::VERSION
+  gem.date              = Time.now.strftime('%Y-%m-%d')
+  gem.summary           = "This gem will make your rails app social in 30 seconds or less."
+  gem.homepage          = "https://github.com/actions/sociable"
+  gem.email             = "sergey@actions.im"
+  gem.authors           = [ "Sergey Zelvenskiy" ]
+  gem.has_rdoc          = false
 
-  s.files             = %w(README)
-  s.files            += Dir.glob("lib/**/*")
-  s.files            += Dir.glob("bin/**/*")
-  s.files            += Dir.glob("man/**/*")
-  s.files            += Dir.glob("test/**/*")
+  gem.files             = %w(README)
+  gem.files            += Dir.glob("lib/**/*")
+  gem.files            += Dir.glob("bin/**/*")
+  gem.files            += Dir.glob("man/**/*")
+  gem.files            += Dir.glob("test/**/*")
+  gem.require_paths = ['lib']
 
 #  s.executables       = %w( sociable )
-  s.description       = "
+  gem.description       = "
   Sociable gem provides abilities to share various user actions happening in your app and present these on custom newsfeed.
   The following features can be seamlessly added to your app.
   1. Create user account using Facebook or Twitter profiles.
@@ -29,10 +30,10 @@ Gem::Specification.new do |s|
   5. Follow friends activities.
   6. Present configurable newsfeed, which shows timeline of events happening in the app."
 
-  s.add_dependency("devise", "~> 2.1.2")
-  s.add_dependency("omniauth-facebook", "~> 1.4.0")
-  s.add_dependency("omniauth-twitter", "~> 0.0.12")
-  s.add_dependency("omniauth-linkedin", "~> 0.0.6")
-  s.add_dependency('faraday', '~> 0.8')
+  gem.add_dependency("devise", "~> 2.1.2")
+  gem.add_dependency("omniauth-facebook", "~> 1.4.0")
+  gem.add_dependency("omniauth-twitter", "~> 0.0.12")
+  gem.add_dependency("omniauth-linkedin", "~> 0.0.6")
+  gem.add_dependency('faraday', '~> 0.8')
 
 end
